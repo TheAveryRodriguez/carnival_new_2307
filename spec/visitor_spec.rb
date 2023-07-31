@@ -31,16 +31,15 @@ describe Visitor do
 
     expect(visitor1.preferences).to eq([:gentle, :thrilling])
   end
+
+  it "can check if visitor is tall enough" do
+    visitor1 = Visitor.new("Bruce", 54, "$10")
+    visitor2 = Visitor.new("Tucker", 36, "$5")
+    visitor3 = Visitor.new("Penny", 64, "$15")
+
+    expect(visitor1.tall_enough?(54)).to eq(true)
+    expect(visitor2.tall_enough?(54)).to eq(false)
+    expect(visitor3.tall_enough?(54)).to eq(true)
+    expect(visitor1.tall_enough?(64)).to eq(false)
+  end
 end
-
-# visitor2 = Visitor.new("Tucker", 36, "$5")
-
-# visitor3 = Visitor.new("Penny", 64, "$15")
-
-# expect(visitor1.tall_enough?(54)).to eq(true)
-
-# expect(visitor2.tall_enough?(54)).to eq(false)
-
-# expect(visitor3.tall_enough?(54)).to eq(true)
-
-# expect(visitor1.tall_enough?(64)).to eq(false)
