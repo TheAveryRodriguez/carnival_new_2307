@@ -20,13 +20,18 @@ describe Visitor do
 
     expect(visitor1.preferences).to eq([])
   end
+
+  it "can add preferences to the visitor" do
+    visitor1 = Visitor.new("Bruce", 54, "$10")
+
+    expect(visitor1.preferences).to eq([])
+
+    visitor1.add_preference(:gentle)
+    visitor1.add_preference(:thrilling)
+
+    expect(visitor1.preferences).to eq([:gentle, :thrilling])
+  end
 end
-
-# visitor1.add_preference(:gentle)
-
-# visitor1.add_preference(:thrilling)
-
-# expect(visitor1.preferences).to eq([:gentle, :thrilling])
 
 # visitor2 = Visitor.new("Tucker", 36, "$5")
 
