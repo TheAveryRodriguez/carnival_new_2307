@@ -6,20 +6,15 @@ describe Ride do
     it "is an instance of Ride" do
       ride1 = Ride.new({name: "Carousel", min_height: 24, admission_fee: 1, excitement: :gentle})
 
-      ride1.name
-      #=> "Carousel"
+      expect(ride1.name).to eq("Carousel")
 
-      ride1.min_height
-      #=> 24
+      expect(ride1.min_height).to eq(24)
 
-      ride1.admission_fee
-      #=> 1
+      expect(ride1.admission_fee).to eq(1)
 
-      ride1.excitement
-      #=> :gentle
+      expect(ride1.excitement).to eq(:gentle)
 
-      ride1.total_revenue
-      #=> 0
+      expect(ride1.total_revenue).to eq(0)
     end
   end
 end
@@ -40,17 +35,17 @@ end
 
 # ride1.board_rider(visitor1)
 
-# ride1.rider_log
+# expect(ride1.rider_log
 # #=> {#<Visitor:0x000000015a16e918 @height=54, @name="Bruce", @preferences=[:gentle], @spending_money=8> => 2,
 #  #<Visitor:0x000000015a11c5c8 @height=36, @name="Tucker", @preferences=[:gentle], @spending_money=4> => 1}
 
-# visitor1.spending_money
+# expect(visitor1.spending_money
 # #=> 8
 
-# visitor2.spending_money
+# expect(visitor2.spending_money
 # #=> 4
 
-# ride1.total_revenue
+# expect(ride1.total_revenue
 # #=> 3
 
 # visitor3 = Visitor.new('Penny', 64, '$15')
@@ -74,17 +69,17 @@ end
 
 # ride3.board_rider(visitor3)
 
-# visitor1.spending_money
+# expect(visitor1.spending_money
 # #=> 8
 
-# visitor2.spending_money
+# expect(visitor2.spending_money
 # #=> 4
 
-# visitor3.spending_money
+# expect(visitor3.spending_money
 # #=> 13
 
-# ride3.rider_log
+# expect(ride3.rider_log
 # #=> {#<Visitor:0x0000000159a852a0 @height=64, @name="Penny", @preferences=[:thrilling], @spending_money=13> => 1}
 
-# ride3.total_revenue
+# expect(ride3.total_revenue
 # #=> 2
