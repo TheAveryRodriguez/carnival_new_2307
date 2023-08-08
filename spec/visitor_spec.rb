@@ -1,27 +1,21 @@
 require "./lib/visitor"
 
-describe Visitor do
-  describe "#initialize" do
-    it "is an instance of Visitor" do
-      visitor1 = Visitor.new("Bruce", 54, "$10")
+RSpec.describe Visitor do
+  it "exists" do
+    visitor1 = Visitor.new("Bruce", 54, "$10")
 
-      expect(visitor1).to be_a(Visitor)
-    end
+    expect(visitor1).to be_a(Visitor)
   end
 
   it "has attributes" do
     visitor1 = Visitor.new("Bruce", 54, "$10")
 
     expect(visitor1.name).to eq("Bruce")
-
     expect(visitor1.height).to eq(54)
-
     expect(visitor1.spending_money).to eq(10)
-
-    expect(visitor1.preferences).to eq([])
   end
 
-  it "can add preferences to the visitor" do
+  it "has/add preferences" do
     visitor1 = Visitor.new("Bruce", 54, "$10")
 
     expect(visitor1.preferences).to eq([])
@@ -32,7 +26,7 @@ describe Visitor do
     expect(visitor1.preferences).to eq([:gentle, :thrilling])
   end
 
-  it "can check if visitor is tall enough" do
+  it "can check if tall enough" do
     visitor1 = Visitor.new("Bruce", 54, "$10")
     visitor2 = Visitor.new("Tucker", 36, "$5")
     visitor3 = Visitor.new("Penny", 64, "$15")
